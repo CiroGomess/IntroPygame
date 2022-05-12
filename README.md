@@ -1,6 +1,6 @@
 # IntroPygame
 Projeto para fins de estudos com Pygame 🐍
-> Status: Developing ⚠️
+> Status: Finalizado ✔️
 
 + Colisao
 + Criação de formas  
