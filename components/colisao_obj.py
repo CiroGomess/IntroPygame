@@ -5,11 +5,8 @@ from sys import exit  # função para fechar janela
 
 from random import randint
 
-
 pygame.init()  # Iniciando o pygame
-
 pygame.mixer.music.set_volume(0.1)
-
 musica_fundo = pygame.mixer.music.load('./music/BoxCat Games - CPU Talk.mp3')
 pygame.mixer.music.play(-1)
 
@@ -31,7 +28,7 @@ fonte = pygame.font.SysFont('arial', 18, True, False)
 
 # Defenindo largura e altura da tela
 tela = pygame.display.set_mode((largura, altura))
-pygame.display.set_caption('Jogo')  # Definindo nome do jogo
+pygame.display.set_caption('Mini-Game')  # Definindo nome do jogo
 relogio = pygame.time.Clock()  # Frame
 
 
@@ -56,12 +53,22 @@ while True:
     # Movimentação por telcas
     if pygame.key.get_pressed()[K_a]:
         x = x - 20
+    if pygame.key.get_pressed()[K_LEFT]:
+        x = x - 20
     if pygame.key.get_pressed()[K_d]:
+        x = x + 20
+    if pygame.key.get_pressed()[K_RIGHT]:
         x = x + 20
     if pygame.key.get_pressed()[K_w]:
         y = y - 20
+    if pygame.key.get_pressed()[K_UP]:
+        y = y - 20
     if pygame.key.get_pressed()[K_s]:
         y = y + 20
+    if pygame.key.get_pressed()[K_DOWN]:
+        y = y + 20
+   
+   
 
     ret_vermelho = pygame.draw.rect(tela, (255, 0, 0), (x, y, 40, 50))
     ret_verde = pygame.draw.rect(
