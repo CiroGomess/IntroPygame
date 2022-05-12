@@ -19,6 +19,9 @@ y = altura / 2
 x_verde = randint(40, 600)
 y_verde = randint(50, 430)
 
+pontos = 0
+
+fonte = pygame.font.SysFont('arial', 18, True, False)
 
 # Defenindo largura e altura da tela
 tela = pygame.display.set_mode((largura, altura))
@@ -32,6 +35,10 @@ while True:
 
     relogio.tick(60)  # Frame
     tela.fill((0, 0, 0))  # tela preta
+
+    potuacao = f'Pontos: {pontos}'
+
+    textoFormatado = fonte.render(potuacao, True, (255, 255, 255))
 
     for event in pygame.event.get():  # Detectando se algum evento ocorreu
 
@@ -59,4 +66,7 @@ while True:
         x_verde = randint(40, 600)
         y_verde = randint(50, 430)
 
+        pontos = pontos + 1
+
+    tela.blit(textoFormatado, (20, 20))
     pygame.display.update()
